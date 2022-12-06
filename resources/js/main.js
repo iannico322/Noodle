@@ -48,12 +48,7 @@ const MusicLyrics = [
 const verseIndex = [2,10, 13,16,20,22,26,30,34,36,44,46,51,54,57,62,67,82]
 
 let interval = 0;
-BlueSky.addEventListener("timeupdate", () => {
-    if (Math.floor(BlueSky.currentTime) > verseIndex[interval]) {
-        search_query.value = MusicLyrics[interval];
-        interval++;
-    }
-  });
+
 
 
 
@@ -116,6 +111,11 @@ BlueSky.addEventListener('timeupdate', () => {
     seconds = Math.floor(seconds % 60);
     seconds = (seconds >= 10) ? seconds : "0" + seconds;
     time = minutes + ":" + seconds
+    console.log(time)
+    if (Math.floor(BlueSky.currentTime) > verseIndex[interval]) {
+        search_query.value = MusicLyrics[interval];
+        interval++;
+    }
 
     if (time == "00:00") {
         ring.src = "./resources/media/img/luckyME2.gif"
