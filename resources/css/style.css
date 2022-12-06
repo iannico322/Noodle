@@ -350,14 +350,15 @@ body {
   }
   .top {
     top: 0;
-    margin-top: -200px;
+    margin-top: -140px;
   }
   .cover {
-    transform: translateY(-20px);
+    transform: translateY(-70px);
     justify-content: center;
     align-items: flex-start;
   }
   .cover img {
+    transform: translateY(-20px);
     height: 50%;
     width: 50%;
   }
