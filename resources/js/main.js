@@ -53,8 +53,6 @@ BlueSky.addEventListener("timeupdate", () => {
         search_query.value = MusicLyrics[interval];
         interval++;
     }
-    console.log(Math.floor(BlueSky.currentTime)  )
-    console.log(Math.floor(verseIndex[interval])  )
   });
 
 
@@ -195,12 +193,17 @@ BlueSky.addEventListener('timeupdate', () => {
         instru2.src = "./resources/media/img/sing4.gif"
         instru1.src = "./resources/media/img/luckyME.gif"
         ring.src = "./resources/media/img/dance3.gif"
-    } else if (time == "01:16") {
+    }else if (time == "01:13") {
+        
+        ring.src = "./resources/media/img/guitar.gif"
+    }
+
+     else if (time == "01:16") {
         cover.style.opacity = "1"
         dancing.src = "./resources/media/img/dance3.gif"
         instru2.src = "./resources/media/img/sing4.gif"
         instru1.src = "./resources/media/img/luckyME.gif"
-        ring.src = "./resources/media/img/guitar.gif"
+      
     }
 
     BlueSky.addEventListener("ended", () => {
