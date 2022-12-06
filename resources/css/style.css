@@ -349,11 +349,16 @@ body {
     min-width: 90%;
   }
   .top {
-    margin-top: 50%;
+    top: 0;
+    margin-top: -200px;
   }
   .cover {
     transform: translateY(-20px);
     justify-content: center;
     align-items: flex-start;
+  }
+  .cover img {
+    height: 50%;
+    width: 50%;
   }
 }
