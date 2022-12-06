@@ -43,6 +43,7 @@ body {
 .cover img {
   height: 30%;
   width: 30%;
+  object-fit: contain;
 }
 
 .bg {

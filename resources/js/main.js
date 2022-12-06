@@ -42,11 +42,26 @@ searchBtn.onclick = ()=>{
 }
 
 
-
+let x = 2
 operationHappy.onclick= ()=>{
-    bg.style.opacity = "100"
-    BlueSky.play()
-    h1.add('active')
+    
+    if(x %2 == 0){
+        bg.style.opacity = "100"
+        BlueSky.play()
+        h1.add('active')
+        operationHappy.style.color = "#f8f9fa"
+        operationHappy.style.backgroundColor = "#ea4335"
+        x++
+    }else{
+        bg.style.opacity = "0"
+        BlueSky.pause()
+        operationHappy.style.color = "black"
+        operationHappy.style.backgroundColor = "#f8f9fa"
+        h1.remove('active')
+        x++
+    }
+    
+    
 }
 
 search_query.addEventListener('mouseover',()=>{
@@ -116,11 +131,11 @@ BlueSky.addEventListener('timeupdate',()=>{
         }
 
         //45   54  109
-        if ( time == "00:43"){
+        if ( time == "00:42"){
             cover.style.opacity = "1"
             dancing.src = "./resources/media/img/luckyME.gif"
             ring.src = "./resources/media/img/ring1.gif"
-        }else if( time == "00:44"){
+        }else if( time == "00:43"){
             // 43 49 55 101
             cover.style.opacity = "0"
             instru1.src = "./resources/media/img/sing3.gif"
@@ -131,15 +146,32 @@ BlueSky.addEventListener('timeupdate',()=>{
             instru1.src = "./resources/media/img/sing2.gif"
         }else if( time == "00:55"){
             instru1.src = "./resources/media/img/sing3.gif"
-        }else if(time == "01:02"){
+        }else if(time == "01:00"){
             dancing.src = "./resources/media/img/sleep.gif"
-            instru1.src = "./resources/media/img/sing3.gif"
+            instru1.src = "./resources/media/img/sing2.gif"
         }
-        else if(time == "01:07"){
+        else if(time == "01:08"){
+            cover.style.opacity = "1"
             dancing.src = "./resources/media/img/luckyMe4.gif"
             instru2.src = "./resources/media/img/sing4.gif"
             instru1.src = "./resources/media/img/luckyME.gif"
+            ring.src = "./resources/media/img/dance3.gif"
+        }else if(time == "01:16"){
+            cover.style.opacity = "1"
+            dancing.src = "./resources/media/img/dance3.gif"
+            instru2.src = "./resources/media/img/sing4.gif"
+            instru1.src = "./resources/media/img/luckyME.gif"
+            ring.src = "./resources/media/img/guitar.gif"
         }
+
+        BlueSky.addEventListener("ended",()=>{
+            bg.style.opacity = "0"
+            h1.remove('active')
+            operationHappy.style.color = "black"
+            operationHappy.style.backgroundColor = "#f8f9fa"
+            cover.style.opacity = "0"
+          })
+    
 
         
 })
